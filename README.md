@@ -7,11 +7,11 @@ A FastAPI-based microservice for fraud detection using a pre-trained machine lea
 1. **Pull the Docker Image**:
 To pull the Docker image from GitHub Container Registry:
 ```bash
-docker pull ghcr.io/png261/fraud-dection-model-microservice:latest
+docker pull ghcr.io/png261/fraud-dection-model-microservice:main
 ```
 2. **Run the Docker Container**
 ```bash
-docker run -d -p 8000:8000 ghcr.io/png261/fraud-dection-model-microservice:latest
+docker run -d -p 8000:8000 ghcr.io/png261/fraud-dection-model-microservice:main
 ```
 ### Option 2: Running from Source Code
 1. **Clone the Repository**:
