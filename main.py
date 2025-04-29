@@ -35,15 +35,13 @@ class Transaction(BaseModel):
 
 @app.post("/predict")
 def predict(transaction: Transaction):
-    df = pd.DataFrame([transaction.dict()])
-    X = df.drop(columns=["is_fraud"])
+    X = pd.DataFrame([transaction.dict()])
     pred = model.predict(X)[0]
     return {"prediction": pred}
 
 
 @app.post("/predict_batch")
 def predict_batch(transactions: List[Transaction]):
-    df = pd.DataFrame([t.dict() for t in transactions])
-    X = df.drop(columns=["is_fraud"])
+    X = pd.DataFrame([t.dict() for t in transactions])
     preds = model.predict(X)
     return {"predictions": preds.tolist()}
