@@ -10,7 +10,6 @@ model = joblib.load("model.pkl")
 
 
 class Transaction(BaseModel):
-    id: int
     trans_date_trans_time: str
     cc_num: str
     merchant: str
@@ -32,7 +31,6 @@ class Transaction(BaseModel):
     unix_time: int
     merch_lat: float
     merch_long: float
-    is_fraud: int
 
 
 @app.post("/predict")
